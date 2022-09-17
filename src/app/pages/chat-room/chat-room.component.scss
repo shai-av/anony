@@ -1,0 +1,28 @@
+.chat-room{
+    display: block;
+    height: calc(100vh - 3em);
+    background-color: rgb(169, 171, 174);
+    padding:0.5em 0;
+}
+.chat{
+    // height: inherit;
+    width:90%;
+    ul{
+        list-style: none;
+    }
+    .msg{
+        padding:0.3em 0.5em;
+        border-radius: 3px;
+        background-color: aquamarine;
+    }
+    .i-msg{
+        text-align:end;
+        .msg{
+            background-color: rgb(109, 101, 101);
+            color:whitesmoke;
+        }
+    }
+    .o-msg{
+
+    }
+}

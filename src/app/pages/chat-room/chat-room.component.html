@@ -1,4 +1,8 @@
 <section class="chat-room">
-    <p>chat-room works!</p>
-    {{msgs|json}}
+    <div class="chat">
+        <ul>
+            <li *ngFor="let msg of msgs"  
+            [ngClass]="msg.sentBy === 'hostId' ? 'o-msg' : 'i-msg'" ><span class="msg">{{msg.txt}}</span></li>
+        </ul>
+    </div>
 </section>

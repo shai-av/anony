@@ -9,10 +9,10 @@ export class ChatRoomComponent implements OnInit {
   
   constructor() { }
   
-  msgs!:Array<string>
+  msgs!:Array<any>
   
   ngOnInit(): void {
-    this.msgs = ['str','str2'];
+    this.msgs = [{txt:'str',sentBy:'guestId'},{txt:'str2',sentBy:'hostId'}];
   }
 
 }

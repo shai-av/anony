@@ -1,11 +1,17 @@
 .app{
     min-height: 100vh;
     background-color: rgb(183, 172, 137);
-    display: flex;
-    flex-direction: column;
+    background-color:dimgrey;
+
     .main-section{
-        flex-grow: 1;
+        height: calc(100vh - 3em);
     }
+    header{
+        height: 3em;
+        outline:1px solid black;
+        text-align: center;
+    }
+
     footer{
         text-align: center;
         font-size: xx-small;
