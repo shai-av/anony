@@ -5,4 +5,8 @@
             [ngClass]="msg.sentBy === 'hostId' ? 'o-msg' : 'i-msg'" ><span class="msg">{{msg.txt}}</span></li>
         </ul>
     </div>
+    <div class="msg-input-wrapper">
+        <textarea name="msg-input" placeholder="type here.." [value]="msg" (input)="writeMsg($event)"></textarea>
+        <button (click)="sendMsg()">send</button>
+    </div>
 </section>
