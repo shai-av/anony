@@ -12,16 +12,18 @@ export class ChatRoomComponent implements OnInit {
   
   msgs!:Array<any>
   msg:String = ''
+  userId:String = '12345'
+
   ngOnInit(): void {
-    this.msgs = [{txt:'str',sentBy:'guestId'},{txt:'str2',sentBy:'hostId'}];
+    this.msgs = [{txt:'str',sentBy:'sad'},{txt:'str2',sentBy:'12345'}];
   }
 
   sendMsg(){
-    console.log('send')
+    if(!this.msg) return
+    this.msgs.push({
+      txt:this.msg,
+      sentBy:this.userId,
+    })
+    this.msg = ''
   }
-
-  writeMsg(event:Event){
-    console.log('write')
-  }
-
 }

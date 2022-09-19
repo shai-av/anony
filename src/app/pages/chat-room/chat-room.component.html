@@ -2,11 +2,13 @@
     <div class="chat">
         <ul>
             <li *ngFor="let msg of msgs"  
-            [ngClass]="msg.sentBy === 'hostId' ? 'o-msg' : 'i-msg'" ><span class="msg">{{msg.txt}}</span></li>
+            [ngClass]="msg.sentBy === userId ? 'out-msg' : 'in-msg'" ><span class="msg">{{msg.txt}}</span></li>
         </ul>
     </div>
-    <div class="msg-input-wrapper">
-        <textarea name="msg-input" placeholder="type here.." [value]="msg" (input)="writeMsg($event)"></textarea>
-        <button (click)="sendMsg()">send</button>
-    </div>
+    <form (submit)="sendMsg()">
+            <div class="msg-input-wrapper">
+            <input type="text"  name="msg-input" placeholder="type here.." [(ngModel)]="msg"/>
+            <button>send</button>
+        </div>
+        </form>
 </section>

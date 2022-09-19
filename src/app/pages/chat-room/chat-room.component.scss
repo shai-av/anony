@@ -6,43 +6,47 @@
     background-color: rgb(169, 171, 174);
     
     .chat{
-        width:80%;
+        width:90%;
         flex-grow: 1;
         ul{
             list-style: none;
             padding:0;
             margin:0;
+            li{
+                margin:1em 0;
+            }
         }
         .msg{
             padding:0.3em 0.7em;
             border-radius: 3px;
             background-color: aquamarine;
         }
-        .i-msg{
+        .in-msg{
             text-align:end;
             .msg{
                 background-color: rgb(109, 101, 101);
                 color:whitesmoke;
             }
         }
-        .o-msg{
+        .out-msg{
     
         }
     }
     .msg-input-wrapper{
-        width:100%;
-        padding:1em 0.5em;
+        padding:1em 0;
         display: flex;
         justify-content: center;
         [name="msg-input"]{
-            width:50%;
+            width:80vw;
             max-height: 200px;
             overflow-y:visible;
             border:none;
             border-radius:15px ;
             line-height: 1.5;
             padding:0 1em;
-
+        }
+        button{
+            margin-inline-start:0.4em;
         }
     }
 }
