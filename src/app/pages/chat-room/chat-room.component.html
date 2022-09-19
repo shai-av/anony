@@ -1,14 +1,14 @@
 <section class="chat-room">
-    <div class="chat">
-        <ul>
-            <li *ngFor="let msg of msgs"  
-            [ngClass]="msg.sentBy === userId ? 'out-msg' : 'in-msg'" ><span class="msg">{{msg.txt}}</span></li>
-        </ul>
+    <div class="chat" #chat>
+        <div *ngFor="let msg of msgs" class="chat-line" [ngClass]="msg.sentBy === userId ? 'out-msg' : 'in-msg'">
+            <span class="msg">{{msg.txt}}</span>
+        </div>
     </div>
     <form (submit)="sendMsg()">
-            <div class="msg-input-wrapper">
-            <input type="text"  name="msg-input" placeholder="type here.." [(ngModel)]="msg"/>
+        <div class="msg-input-wrapper">
+            <input type="text" name="msg-input" placeholder="type here.." [(ngModel)]="msg" autocomplete="off"
+                autofocus />
             <button>send</button>
         </div>
-        </form>
+    </form>
 </section>

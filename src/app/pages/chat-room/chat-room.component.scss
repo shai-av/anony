@@ -1,52 +1,58 @@
-.chat-room{
+.chat-room {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: calc(100vh - 3em);
     background-color: rgb(169, 171, 174);
-    
-    .chat{
-        width:90%;
+
+    .chat {
+        width: 90%;
+        display: flex;
+        flex-direction: column-reverse;
         flex-grow: 1;
-        ul{
-            list-style: none;
-            padding:0;
-            margin:0;
-            li{
-                margin:1em 0;
-            }
+        gap: 0.3em;
+        padding: 0.3em 0;
+        overflow-y: scroll;
+        -ms-overflow-style: none; 
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
         }
-        .msg{
-            padding:0.3em 0.7em;
-            border-radius: 3px;
+
+        .chat-line {
+            width: fit-content;
+            padding: 0.3em 0.8em;
+            border-radius: 1em;
             background-color: aquamarine;
-        }
-        .in-msg{
-            text-align:end;
-            .msg{
+
+            &.in-msg {
+                align-self: end;
                 background-color: rgb(109, 101, 101);
-                color:whitesmoke;
+                color: whitesmoke;
             }
-        }
-        .out-msg{
-    
         }
     }
-    .msg-input-wrapper{
-        padding:1em 0;
+
+    .msg-input-wrapper {
+        background-color: dimgrey;
+        width: 100vw;
+        padding: 1em 0;
         display: flex;
         justify-content: center;
-        [name="msg-input"]{
-            width:80vw;
-            max-height: 200px;
-            overflow-y:visible;
-            border:none;
-            border-radius:15px ;
+
+        [name="msg-input"] {
+            width: 90vw;
+            border: none;
+            border-radius: 15px;
             line-height: 1.5;
-            padding:0 1em;
+            padding: 0 1em;
+            &:focus{
+                outline: none; 
+            }
         }
-        button{
-            margin-inline-start:0.4em;
+
+        button {
+            margin-inline-start: 0.4em;
         }
     }
 }
