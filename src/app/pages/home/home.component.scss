@@ -1,0 +1,13 @@
+.home{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .invite-input-wrapper{
+        border:1px solid rgb(212, 212, 212);
+        padding:30px;
+        border-radius: 15px;
+        text-align: center;
+    }
+}

@@ -8,6 +8,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 export class ChatRoomComponent implements OnInit {
   @ViewChild('chat')
   chat!: ElementRef;
+  connectedUsersCount = 0 
   
   constructor() { }
   

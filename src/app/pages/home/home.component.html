@@ -1,1 +1,13 @@
-<p>home works!</p>
+<section class="home">
+    <p>
+        {{userId}}
+    </p>
+    <div  class="invite-input-wrapper">
+        <form (submit)="inviteUser($event)">
+            <input type="text" [(ngModel)]="value1" name="invite-input" />
+            <button>Connect</button>
+        </form>
+        <h1>Or</h1>
+        <button (click)="createRoom()">Create room</button>
+    </div>
+</section>
