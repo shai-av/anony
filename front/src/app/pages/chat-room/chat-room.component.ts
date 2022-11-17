@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { SocketService } from 'src/app/services/socket.service';
 
 @Component({
   selector: 'chat-room',
@@ -10,11 +11,13 @@ export class ChatRoomComponent implements OnInit {
   chat!: ElementRef;
   connectedUsersCount = 0
 
-  constructor() { }
+  constructor(
+    private socketService:SocketService
+  ) { }
 
   msgs!: Array<any>
-  msg: String = ''
-  userId: String = this._makeId()
+  msg: string = ''
+  userId: string = this._makeId()
 
 
   ngOnInit(): void {
@@ -24,8 +27,12 @@ export class ChatRoomComponent implements OnInit {
 
   sendMsg() {
     if (!this.msg) return
+    this.socketService.sendMsg(this.msg)
+  }
+
+  public addMsgFromSocket(str:string){
     this.msgs.unshift({
-      txt: this.msg,
+      txt: str,
       sentBy: this.userId,
     })
 

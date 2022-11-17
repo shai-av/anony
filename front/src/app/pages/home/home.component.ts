@@ -9,14 +9,14 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   constructor(private router:Router) { }
-  userId:String = this._makeId()
+  userId:string = this._makeId()
   value1=''
   ngOnInit(): void {
     
   }
 
   createRoom(){
-    const roomId : String = this._makeId()
+    const roomId : string = this._makeId()
     this.router.navigateByUrl('/chat-room')
     //route to chat room with id params
   }
